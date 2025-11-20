@@ -20,6 +20,21 @@ const HeroSection = () => {
     document.body.removeChild(link);
   }
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    // Calculate navbar height (nav + tab bar ≈ 80px)
+    const navbarHeight = 80;
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const targetPosition = elementPosition - navbarHeight;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  };
+
   const experiences = [
     {
       id: 1,
@@ -71,7 +86,9 @@ const HeroSection = () => {
               <p className="w-full max-w-[360px] text-sm mt-3 px-2">Passionate about building innovative solutions and love exploring anything related to AI and software development.</p>
             </div>
             <div className="flex gap-6 justify-center pt-5">
-              <button className="border rounded-full p-2 w-32 text-sm hover:bg-slate-100 transition-colors">Contact Me</button>
+              <button onClick={() => scrollToSection('contact')} className="border rounded-full p-2 w-32 text-sm hover:bg-slate-100 transition-colors">
+                Contact Me
+              </button>
               <div className="flex border rounded-full p-2 w-32 bg-black gap-2 justify-center text-white items-center hover:bg-gray-800 transition-colors cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"><path d="M12 15V3" /><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /></svg>
                 <button onClick={handleDonwload} className="text-white text-sm">Resume</button>
@@ -82,7 +99,7 @@ const HeroSection = () => {
       </section>
 
       {/* Experience Timeline Section */}
-      <div className="h-130 p-4 md:p-8 font-mono overflow-x-hidden">
+      <div className="p-4 md:p-8 font-mono overflow-x-hidden mb-30 md:mb-10">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="flex justify-center items-center gap-4 mb-10">

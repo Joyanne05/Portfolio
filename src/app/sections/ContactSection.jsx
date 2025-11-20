@@ -42,9 +42,9 @@ const ContactSection = () => {
                         boxShadow: '0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.6)'
                     }}>
 
-                        <div className="p-12 border-l-4 border-blue-500">
+                        <div className="space-y-12 p-12 border-l-4 border-blue-500">
                             <div className="font-mono">
-                                <form onSubmit={onSubmit}>
+                                <form onSubmit={onSubmit} className="space-y-4">
                                     <div className="bg-gray-50 p-4 border-2 border-gray-300 rounded">
                                         <label className="text-xs text-gray-600 mb-1 block">NAME:</label>
                                         <input
