@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react'
-import { FileText, Github, Linkedin, Mail, X } from 'lucide-react'
+import { FileText, Mail, X } from 'lucide-react'
 
 const ContactSection = () => {
     const [showSuccessPopup, setShowSuccessPopup] = useState(false);
@@ -45,7 +45,6 @@ const ContactSection = () => {
                         <div className="p-12 border-l-4 border-blue-500">
                             <div className="font-mono">
                                 <form onSubmit={onSubmit}>
-                                    <input type="hidden" name="access-key" value="ae04efae-6f30-4867-8a80-c074b79b293d"></input>
                                     <div className="bg-gray-50 p-4 border-2 border-gray-300 rounded">
                                         <label className="text-xs text-gray-600 mb-1 block">NAME:</label>
                                         <input
